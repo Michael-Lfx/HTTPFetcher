@@ -172,7 +172,11 @@
 }
 
 - (NSMethodSignature*)methodSignatureForSelector:(SEL)selector {
-  return [dummyStream_ methodSignatureForSelector:(SEL)selector];
+        //@@@bp
+        //removed deprecated casting from line:
+        //    return [dummyStream_ methodSignatureForSelector:(SEL)selector];
+  return [dummyStream_ methodSignatureForSelector:selector];
+        //@@@
 }
 
 - (void)forwardInvocation:(NSInvocation*)invocation {
